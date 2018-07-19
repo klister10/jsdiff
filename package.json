@@ -24,7 +24,8 @@
   "main": "./src",
   "browser": "./dist/diff.js",
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "build": "grunt --force"
   },
   "dependencies": {},
   "devDependencies": {
