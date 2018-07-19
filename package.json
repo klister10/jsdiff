@@ -11,12 +11,12 @@
   ],
   "bugs": {
     "email": "kpdecker@gmail.com",
-    "url": "http://github.com/kpdecker/jsdiff/issues"
+    "url": "http://github.com/klister10/jsdiff/issues"
   },
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kpdecker/jsdiff.git"
+    "url": "git://github.com/klister10/jsdiff.git"
   },
   "engines": {
     "node": ">=0.3.1"
