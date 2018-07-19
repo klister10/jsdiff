@@ -24,10 +24,8 @@ const extendedWordChars = /^[a-zA-Z\u{C0}-\u{FF}\u{D8}-\u{F6}\u{F8}-\u{2C6}\u{2C
 const reWhitespace = /\S/;
 
 export const wordDiff = new Diff();
-wordDiff.equals = function (left, right) {
-  //console.log("in wordEquals");
-  if(this.options.customEquals){
-    //console.log("calling custom equals");
+wordDiff.equals = function(left, right) {
+  if (this.options.customEquals) {
     return this.options.customEquals(left, right);
   }
   if (this.options.ignoreCase) {
