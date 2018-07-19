@@ -21,7 +21,7 @@
   "engines": {
     "node": ">=0.3.1"
   },
-  "main": "./lib",
+  "main": "./src",
   "browser": "./dist/diff.js",
   "scripts": {
     "test": "grunt"
