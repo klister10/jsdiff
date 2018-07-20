@@ -26,7 +26,7 @@
   "scripts": {
     "test": "grunt",
     "build": "grunt --force",
-    "install": "npm install && npm run build"
+    "install": "if ! type grunt > /dev/null; then npm install grunt; fi && npm run build"
   },
   "dependencies": {},
   "devDependencies": {
