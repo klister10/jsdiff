@@ -24,8 +24,8 @@
   "main": "./lib",
   "browser": "./dist/diff.js",
   "scripts": {
-    "prepare": "npm install",
-    "build": "grunt --force"
+    "prepare": "grunt --force",
+    "test": "grunt"
   },
   "dependencies": {},
   "devDependencies": {
