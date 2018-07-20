@@ -26,7 +26,7 @@
   "scripts": {
     "test": "grunt",
     "build": "grunt --force",
-    "install": "npm install && npm run build"
+    "install": "npm install grunt && npm run build"
   },
   "dependencies": {},
   "devDependencies": {
