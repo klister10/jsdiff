@@ -1,5 +1,5 @@
 {
-  "name": "kl_diff",
+  "name": "diff",
   "version": "1.1.0",
   "description": "A javascript text diff implementation.",
   "keywords": [
@@ -24,7 +24,7 @@
   "main": "./lib",
   "browser": "./dist/diff.js",
   "scripts": {
-    "prepare": "grunt --force",
+    "prepare": "npm update .",
     "test": "grunt"
   },
   "dependencies": {},
