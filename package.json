@@ -27,7 +27,7 @@
     "test": "grunt",
     "build": "grunt --force",
     "prepare": "if ! [ -d node_modules ]; then npm install; fi && npm run build",
-    "postinstall": "npm run build"
+    "install": "npm install . && npm run build"
   },
   "dependencies": {},
   "devDependencies": {
