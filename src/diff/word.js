@@ -25,9 +25,9 @@ const reWhitespace = /\S/;
 
 export const wordDiff = new Diff();
 wordDiff.equals = function(left, right) {
-  console.log('in wordEquals');
+  // console.log('in wordEquals');
   if (this.options.customEquals) {
-    console.log('calling custom equals');
+    // console.log('calling custom equals');
     return this.options.customEquals(left, right);
   }
   if (this.options.ignoreCase) {
