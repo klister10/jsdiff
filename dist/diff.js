@@ -181,7 +181,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var oldPos = this.extractCommon(bestPath[0], newString, oldString, 0);
 	    if (bestPath[0].newPos + 1 >= newLen && oldPos + 1 >= oldLen) {
 	      // Identity per the equality and tokenizer
-	      return done([{ value: this.join(newString), count: newString.length }]);
+	      return done([{ value: this.join(newString, " "), count: newString.length }]);
 	    }
 
 	    // Main worker method. checks all permutations of a given edit length for acceptance.
