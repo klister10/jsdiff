@@ -53,6 +53,7 @@ wordDiff.tokenize = function(value) {
 };
 
 export function diffWords(oldStr, newStr, options) {
+  console.log("in diffWords, kathleen's version");
   options = generateOptions(options, {ignoreWhitespace: true});
   return wordDiff.diff(oldStr, newStr, options);
 }
