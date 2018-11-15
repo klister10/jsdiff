@@ -328,9 +328,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	          return oldValue.length > value.length ? oldValue : value;
 	        });
 
-	        component.value = diff.join(value);
+	        component.value = diff.join(value, " ");
 	      } else {
-	        component.value = diff.join(newString.slice(newPos, newPos + component.count));
+	        component.value = diff.join(newString.slice(newPos, newPos + component.count), " ");
 	      }
 	      newPos += component.count;
 
@@ -339,7 +339,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        oldPos += component.count;
 	      }
 	    } else {
-	      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count));
+	      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count), " ");
 	      oldPos += component.count;
 
 	      // Reverse add and remove so removes are output first to match common convention
@@ -358,7 +358,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // This is only available for string mode.
 	  var lastComponent = components[componentLen - 1];
 	  if (componentLen > 1 && typeof lastComponent.value === 'string' && (lastComponent.added || lastComponent.removed) && diff.equals('', lastComponent.value)) {
-	    components[componentLen - 2].value += lastComponent.value;
+	    components[componentLen - 2].value += (" " + lastComponent.value);
 	    components.pop();
 	  }
 

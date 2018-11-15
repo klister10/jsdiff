@@ -187,9 +187,10 @@ function buildValues(diff, components, newString, oldString, useLongestToken) {
           return oldValue.length > value.length ? oldValue : value;
         });
 
-        component.value = diff.join(value);
+        // Join with whitespace no matter what since for our purposes we will never not be ignoring white space
+        component.value = diff.join(value, " ");
       } else {
-        component.value = diff.join(newString.slice(newPos, newPos + component.count));
+        component.value = diff.join(newString.slice(newPos, newPos + component.count), " ");
       }
       newPos += component.count;
 
@@ -198,7 +199,7 @@ function buildValues(diff, components, newString, oldString, useLongestToken) {
         oldPos += component.count;
       }
     } else {
-      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count));
+      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count), " ");
       oldPos += component.count;
 
       // Reverse add and remove so removes are output first to match common convention
@@ -220,7 +221,7 @@ function buildValues(diff, components, newString, oldString, useLongestToken) {
       && typeof lastComponent.value === 'string'
       && (lastComponent.added || lastComponent.removed)
       && diff.equals('', lastComponent.value)) {
-    components[componentLen - 2].value += lastComponent.value;
+    components[componentLen - 2].value += (" " + lastComponent.value);
     components.pop();
   }
 
