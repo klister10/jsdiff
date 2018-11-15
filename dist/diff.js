@@ -470,7 +470,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-	wordDiff.join(words){
+	wordDiff.join = function (words) {
 		console.log("in wordDiff.join");
 	  if(this.options.ignoreWhitespace){
 	    return words.join(" ");
