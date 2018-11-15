@@ -25,14 +25,12 @@ const reWhitespace = /\S/;
 
 export const wordDiff = new Diff();
 wordDiff.equals = function(left, right) {
-  console.log('in wordEquals');
-  if (this.options.customEquals) {
-    console.log('calling custom equals');
-    return this.options.customEquals(left, right);
-  }
   if (this.options.ignoreCase) {
     left = left.toLowerCase();
     right = right.toLowerCase();
+  }
+  if (this.options.customEquals) {
+    return this.options.customEquals(left, right) || this.options.ignoreWhitespace && !reWhitespace.test(left) && !reWhitespace.test(right);
   }
   return left === right || this.options.ignoreWhitespace && !reWhitespace.test(left) && !reWhitespace.test(right);
 };
