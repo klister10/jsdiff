@@ -459,6 +459,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }
 
+	  if(this.options.ignoreWhitespace){
+	  	tokens = tokens.filter(token => token != " ");
+	  }
+
 	  console.log("tokens: ", tokens);
 
 	  return tokens;
