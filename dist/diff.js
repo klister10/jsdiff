@@ -329,10 +329,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	          return oldValue.length > value.length ? oldValue : value;
 	        });
 
-	        console.log("setting value1");
+	        console.log("setting value1. diff: ", diff, ", value: ", value);
 	        component.value = diff.join(value, " ");
 	      } else {
-	      	console.log("setting value2");
+	      	console.log("setting value2. diff: ", diff, ", value: ", newString.slice(newPos, newPos + component.count));
 	        component.value = diff.join(newString.slice(newPos, newPos + component.count), " ");
 	      }
 	      newPos += component.count;
@@ -342,7 +342,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        oldPos += component.count;
 	      }
 	    } else {
-	    	console.log("settingValue 3");
+	    	console.log("settingValue 3. diff: ", diff, ", value: ", oldString.slice(oldPos, oldPos + component.count));
 	      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count), " ");
 	      oldPos += component.count;
 
