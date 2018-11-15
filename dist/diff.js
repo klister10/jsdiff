@@ -313,6 +313,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	function buildValues(diff, components, newString, oldString, useLongestToken) {
+		console.log("in buildValues");
 	  var componentPos = 0,
 	      componentLen = components.length,
 	      newPos = 0,
@@ -328,8 +329,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	          return oldValue.length > value.length ? oldValue : value;
 	        });
 
+	        console.log("setting value1");
 	        component.value = diff.join(value, " ");
 	      } else {
+	      	console.log("setting value2");
 	        component.value = diff.join(newString.slice(newPos, newPos + component.count), " ");
 	      }
 	      newPos += component.count;
@@ -339,6 +342,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        oldPos += component.count;
 	      }
 	    } else {
+	    	console.log("settingValue 3");
 	      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count), " ");
 	      oldPos += component.count;
 
@@ -469,7 +473,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	function diffWords(oldStr, newStr, options) {
-		console.log("diffWords from kathleen's version");
+		console.log("diffWords from kathleen's new version");
 	  options = /*istanbul ignore start*/(0, _params.generateOptions) /*istanbul ignore end*/(options, { ignoreWhitespace: true });
 	  return wordDiff.diff(oldStr, newStr, options);
 	}
