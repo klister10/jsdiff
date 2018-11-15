@@ -181,7 +181,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var oldPos = this.extractCommon(bestPath[0], newString, oldString, 0);
 	    if (bestPath[0].newPos + 1 >= newLen && oldPos + 1 >= oldLen) {
 	      // Identity per the equality and tokenizer
-	      return done([{ value: this.join(newString, " "), count: newString.length }]);
+	      return done([{ value: this.join(newString), count: newString.length }]);
 	    }
 
 	    // Main worker method. checks all permutations of a given edit length for acceptance.
@@ -329,11 +329,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	          return oldValue.length > value.length ? oldValue : value;
 	        });
 
-	        console.log("setting value1. diff: ", diff, ", value: ", value);
-	        component.value = diff.join(value, " ");
+	        component.value = diff.join(value);
 	      } else {
-	      	console.log("setting value2. diff: ", diff, ", value: ", newString.slice(newPos, newPos + component.count));
-	        component.value = diff.join(newString.slice(newPos, newPos + component.count), " ");
+	        component.value = diff.join(newString.slice(newPos, newPos + component.count));
 	      }
 	      newPos += component.count;
 
@@ -342,8 +340,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        oldPos += component.count;
 	      }
 	    } else {
-	    	console.log("settingValue 3. diff: ", diff, ", value: ", oldString.slice(oldPos, oldPos + component.count));
-	      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count), " ");
+	      component.value = diff.join(oldString.slice(oldPos, oldPos + component.count));
 	      oldPos += component.count;
 
 	      // Reverse add and remove so removes are output first to match common convention
@@ -471,6 +468,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  return tokens;
 	};
+
+
+	wordDiff.join(words){
+		console.log("in wordDiff.join");
+	  if(this.options.ignoreWhitespace){
+	    return words.join(" ");
+	  } else {
+	    return words.join('');
+	  }
+	}
 
 	function diffWords(oldStr, newStr, options) {
 		console.log("diffWords from kathleen's new version");
