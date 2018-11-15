@@ -436,15 +436,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	var reWhitespace = /\S/;
 
 	var wordDiff = /*istanbul ignore start*/exports. /*istanbul ignore end*/wordDiff = new /*istanbul ignore start*/_base2['default'] /*istanbul ignore end*/();
-	wordDiff.equals = function (left, right) {
-	  // console.log('in wordEquals');
-	  if (this.options.customEquals) {
-	    // console.log('calling custom equals');
-	    return this.options.customEquals(left, right);
-	  }
+	wordDiff.equals = function(left, right) {
 	  if (this.options.ignoreCase) {
 	    left = left.toLowerCase();
 	    right = right.toLowerCase();
+	  }
+	  if (this.options.customEquals) {
+	    return this.options.customEquals(left, right) || this.options.ignoreWhitespace && !reWhitespace.test(left) && !reWhitespace.test(right);
 	  }
 	  return left === right || this.options.ignoreWhitespace && !reWhitespace.test(left) && !reWhitespace.test(right);
 	};
@@ -465,6 +463,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	function diffWords(oldStr, newStr, options) {
+		console.log("diffWords from kathleen's version");
 	  options = /*istanbul ignore start*/(0, _params.generateOptions) /*istanbul ignore end*/(options, { ignoreWhitespace: true });
 	  return wordDiff.diff(oldStr, newStr, options);
 	}
