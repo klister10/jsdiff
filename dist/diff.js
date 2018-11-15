@@ -313,7 +313,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	function buildValues(diff, components, newString, oldString, useLongestToken) {
-		console.log("in buildValues");
 	  var componentPos = 0,
 	      componentLen = components.length,
 	      newPos = 0,
@@ -464,14 +463,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  	tokens = tokens.filter(token => token != " ");
 	  }
 
-	  console.log("tokens: ", tokens);
-
 	  return tokens;
 	};
 
 
 	wordDiff.join = function (words) {
-		console.log("in wordDiff.join");
 	  if(this.options.ignoreWhitespace){
 	    return words.join(" ");
 	  } else {
@@ -480,7 +476,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function diffWords(oldStr, newStr, options) {
-		console.log("diffWords from kathleen's new version");
 	  options = /*istanbul ignore start*/(0, _params.generateOptions) /*istanbul ignore end*/(options, { ignoreWhitespace: true });
 	  return wordDiff.diff(oldStr, newStr, options);
 	}

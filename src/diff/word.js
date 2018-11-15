@@ -52,7 +52,7 @@ wordDiff.tokenize = function(value) {
   return tokens;
 };
 
-wordDiff.join(words){
+wordDiff.join = function(words){
   if(this.options.ignoreWhitespace){
     return words.join(" ");
   } else {
@@ -61,7 +61,6 @@ wordDiff.join(words){
 }
 
 export function diffWords(oldStr, newStr, options) {
-  console.log("in diffWords, kathleen's version");
   options = generateOptions(options, {ignoreWhitespace: true});
   return wordDiff.diff(oldStr, newStr, options);
 }
